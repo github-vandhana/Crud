@@ -4,6 +4,7 @@ import { ClientDetailsComponent } from './Clients/client-details/client-details.
 import { ClientDetailsEditComponent } from './edit/client-details-edit/client-details-edit.component';
 import { ClientAddDetailsComponent } from './new-client/client-add-details/client-add-details.component';
 import { HeaderComponent } from './header/header.component';
+import { ContentProjectionComponent } from './content-projection/content-projection.component';
 
 export const routes: Routes = [
   {
@@ -26,6 +27,10 @@ export const routes: Routes = [
     path:'',
     component:HeaderComponent
   },
+  {
+    path:'',
+    component:ContentProjectionComponent
+  }
 
 
 
