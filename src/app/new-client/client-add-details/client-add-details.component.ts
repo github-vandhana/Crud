@@ -5,7 +5,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 @Component({
   selector: 'app-client-add-details',
   standalone: true,
-  imports: [ReactiveFormsModule,CommonModule,NgFor,NgIf],
+  imports: [ReactiveFormsModule,CommonModule],
   templateUrl: './client-add-details.component.html',
   styleUrl: './client-add-details.component.css'
 })
