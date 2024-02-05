@@ -1,28 +1,26 @@
 <div class="d-flex justify-content-center mt-5">
-  <div class="card" style="width: 40rem;">
+  <div class="card">
     <div class="card-body">
-      <h5 class="card-title text-center">Client Information Edit Form</h5>
+      <h5 class="card-title text-center">Client Information Form</h5>
 
       <form (ngSubmit)="onSubmit()" >
         <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" class="form-control form-control-sm" id="name" formControlName="name" required>
+
+          <input type="text" class="form-control form-control-sm" id="name" formControlName="name">
         </div>
         <div class="form-group">
-          <label for="phone">Phone</label>
-          <input type="text" class="form-control form-control-sm" id="phone" formControlName="phone" required pattern="^[0-9]*$">
+          <input type="text" class="form-control form-control-sm" id="phone" formControlName="phone">
         </div>
         <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" class="form-control form-control-sm" id="email" formControlName="email" required>
+          <input type="email" class="form-control form-control-sm" id="email" formControlName="email">
         </div>
         <div class="form-group">
           <label for="location">Location</label>
-          <input type="text" class="form-control form-control-sm" id="location" formControlName="location" required>
+          <input type="text" class="form-control form-control-sm" id="location" formControlName="location">
         </div>
         <div class="form-group">
           <label for="company">Company</label>
-          <input type="text" class="form-control form-control-sm" id="company" formControlName="company" required>
+          <input type="text" class="form-control form-control-sm" id="company" formControlName="company">
         </div>
         <button type="submit" class="btn btn-primary btn-sm mt-3">Submit</button>
       </form>

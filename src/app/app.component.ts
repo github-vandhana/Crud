@@ -6,7 +6,7 @@ import { ContentProjectionComponent } from './content-projection/content-project
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet,ContentProjectionComponent],
+  imports: [CommonModule, RouterOutlet,ContentProjectionComponent,],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
