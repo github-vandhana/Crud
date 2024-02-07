@@ -24,14 +24,10 @@ export class ClientDetailsEditComponent {
   };
   onSubmit(form:any) {
     if (form.valid) {
-      // Form is valid, you can now handle the submission logic
-      console.log('Form submitted successfully!');
       console.log('Client Data:', this.clientData);
 
-      // You can perform additional logic here, such as sending the data to a server, etc.
 
     } else {
-      // Form is invalid, show an error or take appropriate action
       console.log('Form is invalid. Please check the fields.');
     }
   }
