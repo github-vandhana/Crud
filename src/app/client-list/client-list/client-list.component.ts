@@ -7,9 +7,13 @@ export interface data{
   name:string,
   phone:number,
   email:string,
-  location:string,
-
   company:string,
+  address: {
+    street: string;
+    city: string;
+    state: string;
+    pincode: string;
+}
 }
 @Component({
   selector: 'app-client-list',
@@ -25,18 +29,26 @@ export class ClientListComponent {
       name: 'John Doe',
       phone: 1234567890,
       email: 'john@example.com',
-      location: 'City1',
-      company: 'ABC Inc.'
+      company: 'ABC Inc.',
+      address: {
+        street: '123 Main St',
+        city: 'City1',
+        state: 'State1',
+        pincode: '12345'
+      }
     },
     {
       id: 2,
-      name: ' Doe',
+      name: 'Jane Doe',
       phone: 9876543210,
       email: 'jane@example.com',
-      location: 'City2',
-      company: 'XYZ Ltd.'
-    },
+      company: 'XYZ Ltd.',
+      address: {
+        street: '456 Elm St',
+        city: 'City2',
+        state: 'State2',
+        pincode: '54321'
+      }
+    }
   ];
-
-
 }

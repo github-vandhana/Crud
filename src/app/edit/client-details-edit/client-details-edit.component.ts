@@ -25,8 +25,6 @@ export class ClientDetailsEditComponent {
   onSubmit(form:any) {
     if (form.valid) {
       console.log('Client Data:', this.clientData);
-
-
     } else {
       console.log('Form is invalid. Please check the fields.');
     }
