@@ -5,29 +5,61 @@
       <form #clientEditform="ngForm" (ngSubmit)="onSubmit(clientEditform)">
         <div class="form-group">
           <input type="text" class="form-control form-control-sm" id="name" placeholder="Name" [(ngModel)]="clientData.name" name="name" required>
+          <div *ngIf="clientEditform.controls['name']?.errors?.['required'] && (clientEditform.controls['name'].dirty || clientEditform.controls['name'].touched)" class="text-danger">
+            Name is required
+          </div>
         </div>
         <div class="form-group">
-          <input type="text" class="form-control form-control-sm" id="phone" placeholder="Phone" [(ngModel)]="clientData.phone" name="phone" required>
+          <input type="text" class="form-control form-control-sm" id="phone" placeholder="Phone"
+           [(ngModel)]="clientData.phone" name="phone"  pattern="^[0-9]{10}$">
+          <div *ngIf="clientEditform.controls['phone']?.errors?.['required']&& (clientEditform.controls['phone'].dirty || clientEditform.controls['phone'].touched)" class="text-danger">
+            Phone is required
+          </div>
+          <div *ngIf="clientEditform.controls['phone']?.errors?.['pattern'] && (clientEditform.controls['phone'].dirty || clientEditform.controls['phone'].touched)" class="text-danger">
+            Phone must be 10 digits
+          </div>
         </div>
         <div class="form-group">
-          <input type="email" class="form-control form-control-sm" id="email" placeholder="Email" [(ngModel)]="clientData.email" name="email" required>
+          <input type="email" class="form-control form-control-sm" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email" [(ngModel)]="clientData.email"
+           name="email" required>
+          <div *ngIf="clientEditform.controls['email']?.errors?.['required']&& (clientEditform.controls['email'].dirty || clientEditform.controls['email'].touched)" class="text-danger">
+            Email is required
+          </div>
+          <div *ngIf="clientEditform.controls['email']?.errors?.['pattern'] && (clientEditform.controls['email'].dirty || clientEditform.controls['email'].touched)" class="text-danger">
+            Please enter a valid email address
+          </div>
         </div>
         <div class="form-group">
           <input type="text" class="form-control form-control-sm" id="company" placeholder="Company" [(ngModel)]="clientData.company" name="company" required>
+          <div *ngIf="clientEditform.controls['company']?.errors?.['required']&& (clientEditform.controls['company'].dirty || clientEditform.controls['company'].touched)" class="text-danger">
+            Company is required
+          </div>
         </div>
         <div class="form-group">
           <input type="text" class="form-control form-control-sm" id="street" placeholder="Street" [(ngModel)]="clientData.address.street" name="street" required>
+          <div *ngIf="clientEditform.controls['street']?.errors?.['required']&& (clientEditform.controls['street'].dirty || clientEditform.controls['street'].touched)" class="text-danger">
+            Street is required
+          </div>
         </div>
         <div class="form-group">
           <input type="text" class="form-control form-control-sm" id="city" placeholder="City" [(ngModel)]="clientData.address.city" name="city" required>
+          <div *ngIf="clientEditform.controls['city']?.errors?.['required']&& (clientEditform.controls['city'].dirty || clientEditform.controls['city'].touched)" class="text-danger">
+            City is required
+          </div>
         </div>
         <div class="form-group">
           <input type="text" class="form-control form-control-sm" id="state" placeholder="State" [(ngModel)]="clientData.address.state" name="state" required>
+          <div *ngIf="clientEditform.controls['state']?.errors?.['required']&& (clientEditform.controls['state'].dirty || clientEditform.controls['state'].touched)" class="text-danger">
+            State is required
+          </div>
         </div>
         <div class="form-group">
           <input type="text" class="form-control form-control-sm" id="pincode" placeholder="Pincode" [(ngModel)]="clientData.address.pincode" name="pincode" required>
+          <div *ngIf="clientEditform.controls['pincode']?.errors?.['required']&& (clientEditform.controls['pincode'].dirty || clientEditform.controls['pincode'].touched)" class="text-danger">
+            Pincode is required
+          </div>
         </div>
-        <button type="submit" class="btn btn-primary mt-4">Submit</button>
+        <button type="submit" class="btn btn-primary mt-4" [disabled]="clientEditform.invalid">Submit</button>
       </form>
     </div>
   </div>

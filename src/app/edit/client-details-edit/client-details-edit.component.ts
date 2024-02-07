@@ -22,12 +22,17 @@ export class ClientDetailsEditComponent {
       pincode: ''
     }
   };
-  onSubmit(clientEditform: NgForm) {
-    if (clientEditform.valid) {
+  onSubmit(form:any) {
+    if (form.valid) {
+      // Form is valid, you can now handle the submission logic
       console.log('Form submitted successfully!');
-      console.log(this.clientData);
+      console.log('Client Data:', this.clientData);
+
+      // You can perform additional logic here, such as sending the data to a server, etc.
+
     } else {
-      console.log('Form is invalid!');
+      // Form is invalid, show an error or take appropriate action
+      console.log('Form is invalid. Please check the fields.');
     }
   }
 }
